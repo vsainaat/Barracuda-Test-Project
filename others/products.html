@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+  
+
+  
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+
+  
+
+  
+
+
+  
+   <!-- <link rel="stylesheet" type="text/css" href="/css/result-light.css"> -->
+  
+
+  
+
+  <style type="text/css">
+    
+  </style>
+
+  <title>JSON to Multiple drop down Select Options</title>
+
+  
+    
+
+
+
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+
+$('.multi-field-wrapper').each(function () {
+        var $wrapper = $('.multi-fields', this);
+        var x = 0;
+		var price = [];
+		price[0] = 0;
+		$($wrapper).append('<div class="column-labels"><label class="product-details">Product</label><label class="product-quantity">Quantity</label><label class="product-price">Price</label></div>');
+	
+		$(".add-field", $(this)).click(function (e) {
+            x++;
+			
+			
+			if(x==1){
+			
+					$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Country:</label><br/><select id="country1" class="country1" name="country"><option value="000">-Select Country-</option></select><br /><label>State:</label><br/><select id="state1" class="state1" name="network"><option value="000">-Select State-</option></select><br /><label>City:</label><br/><select id="model1" class="model1" name="model"><option value="000">-Select City-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity1" class="quantity1"/></form></div><div class="product-price"><input type="text" id="price1" class="price1" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+			}
+			
+			if(x==2){
+					$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Country:</label><br/><select id="country1" class="country1" name="country"><option value="000">-Select Country-</option></select><br /><label>State:</label><br/><select id="state1" class="state1" name="network"><option value="000">-Select State-</option></select><br /><label>City:</label><br/><select id="model1" class="model1" name="model"><option value="000">-Select City-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity2" class="quantity2"/></form></div><div class="product-price"><input type="text" id="price2" class="price2" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+
+			}
+			if(x==3){
+			
+					$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Country:</label><br/><select id="country1" class="country1" name="country"><option value="000">-Select Country-</option></select><br /><label>State:</label><br/><select id="state1" class="state1" name="network"><option value="000">-Select State-</option></select><br /><label>City:</label><br/><select id="model1" class="model1" name="model"><option value="000">-Select City-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity3" class="quantity3"/></form></div><div class="product-price"><input type="text" id="price3" class="price3" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+
+			
+			}
+			if(x==4){
+			
+					$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Country:</label><br/><select id="country1" class="country1" name="country"><option value="000">-Select Country-</option></select><br /><label>State:</label><br/><select id="state1" class="state1" name="network"><option value="000">-Select State-</option></select><br /><label>City:</label><br/><select id="model1" class="model1" name="model"><option value="000">-Select City-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity4" class="quantity4"/></form></div><div class="product-price"><input type="text" id="price4" class="price4" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+
+			
+			}
+			
+				
+			
+		var myJson = {
+    "country": [
+        {
+            "name": "United States",
+            "id": "usa",
+            "states": [
+                {
+                    "name": "State 1 USA",
+                    "id": "usaState1",
+                    "cities": [
+                        {
+                            "name": "City 1",
+                            "id": "usaState1City1",
+                            "area": 1234
+                        },
+                        {
+                            "name": "City 2",
+                            "id": "usaState1City2",
+                            "area": "6789 sqkm"
+                        }
+                    ]
+                },
+                {
+                    "name": "State 2 USA",
+                    "id": "usaState2",
+                    "cities": [
+                        {
+                            "name": "City 3",
+                            "id": "usaState2City3",
+                            "area": "0000 sqkm"
+                        },
+                        {
+                            "name": "City 4",
+                            "id": "usaState2City4",
+                            "area": "1111 sqkm"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Australia",
+            "id": "aus",
+            "states": [
+                {
+                    "name": "State 1 Australia",
+                    "id": "ausState1",
+                    "cities": [
+                        {
+                            "name": "City 5",
+                            "id": "ausState1City5",
+                            "area": "2222 sqkm"
+                        },
+                        {
+                            "name": "City 6",
+                            "id": "ausState1City6",
+                            "area": "3333 sqkm"
+                        }
+                    ]
+                },
+                {
+                    "name": "State 2 Australia",
+                    "id": "ausState2",
+                    "cities": [
+                        {
+                            "name": "City 7",
+                            "id": "ausState2City7",
+                            "area": "4444 sqkm"
+                        },
+                        {
+                            "name": "City 8",
+                            "id": "ausState2City8",
+                            "area": "5555 sqkm"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+$.each(myJson.country, function (index, value) {
+    $('.country1').append('<option value="'+value.id+'">'+value.name+'</option>');
+});
+
+$('.country1').on('change', function(){
+    
+    for(var i = 0; i < myJson.country.length; i++)
+    {
+      if(myJson.country[i].id == $(this).val())
+      {
+         //$('.state1').html('<option value="000">-Select State-</option>');
+         $.each(myJson.country[i].states, function (index, value) {
+            $('.state1').append('<option value="'+value.id+'">'+value.name+'</option>');
+        });
+      }
+    }
+});
+
+
+function getCities() {
+    var cities = [];
+    for(var i = 0; i < myJson.country.length; i++) {
+      var country = myJson.country[i];
+      for(var j = 0; j < country.states.length; j++) {
+          var state = country.states[j];
+          for (var k = 0; k < state.cities.length; k++) {
+            var city = state.cities[k];
+            cities.push({
+                stateId: state.id,
+                stateName: state.name,
+                cityId: city.id,
+                cityName: city.name,
+                cityArea: city.area
+            });
+          }
+      }
+    }
+    return cities;
+}
+
+
+$('.state1').on('change', function(){
+   
+    var cities = getCities();
+   // $('.model1').html('<option value="000">-Select State-</option>');
+    var stateId = $(this).val();
+      $("h1").text($(this).val());
+    $.each(cities, function (index, value) {
+      if (value.stateId == stateId) {
+	  $("h1").text(stateId);
+        $('.model1').append('<option value="'+value.cityId +'">'+value.cityName+'</option>');
+        
+        
+      }
+      
+
+    });
+  });
+  $('.model1').on('change', function(){
+           var cityId = $(this).val();
+          //$("h1").text($(this).val());
+          var cities = getCities();
+   
+          $.each(cities, function (index, value) {
+          if(value.cityId == cityId){
+          //$("h1").text(value.cityArea);
+		  price[x] = value.cityArea;
+		  
+			if(x==1){
+			
+					var text = $('.price1');
+		  text.val(price[x]);
+			
+			}
+			
+			if(x==2){
+			
+					var text = $('.price2');
+		  text.val(price[x]);
+			
+			}
+			
+			if(x==3){
+			
+					var text = $('.price3');
+		  text.val(price[x]);
+			
+			}
+			
+			if(x==4){
+			
+					var text = $('.price4');
+		  text.val(price[x]);
+			
+			}
+		  
+		  
+		  
+           }   
+          });
+          });
+ 
+ 
+  $('.quantity1').on('change', function(){
+  
+			
+  				var quantity = document.getElementById("quantity1").value;
+          var price = document.getElementById("price1").value;
+		  
+		  var text = $('.price1');
+				text.val(quantity*price);
+				 price[x] = quantity*price;
+				
+        	});
+			$('.quantity2').on('change', function(){
+  
+			
+  				var quantity = document.getElementById("quantity2").value;
+          var price = document.getElementById("price2").value;
+		  
+		  var text = $('.price2');
+				text.val(quantity*price);
+				price[x] = quantity*price;
+          
+        	});
+			$('.quantity3').on('change', function(){
+  
+			
+  				var quantity = document.getElementById("quantity3").value;
+          var price = document.getElementById("price3").value;
+		  
+		  var text = $('.price3');
+				text.val(quantity*price);
+				price[x] = quantity*price;
+				
+        	});
+			$('.quantity4').on('change', function(){
+  
+			
+  				var quantity = document.getElementById("quantity4").value;
+          var price = document.getElementById("price4").value;
+		  
+		  var text = $('.price4');
+				text.val(quantity*price);
+				price[x] = quantity*price;
+				
+        	});
+		
+			$('.button').on('click', function(){
+				if(x==1){
+				var price1 = document.getElementById("price1").value;
+				var text = $('.total');
+				text.val(+price1);
+				}
+				if(x==2){
+				var price1 = document.getElementById("price1").value;
+				var price2 = document.getElementById("price2").value;
+				var text = $('.total');
+				text.val(+price1 + +price2);
+				}
+				if(x==3){
+				var price1 = document.getElementById("price1").value;
+				var price2 = document.getElementById("price2").value;
+				var price3 = document.getElementById("price3").value;
+				var text = $('.total');
+				text.val(+price1 + +price2 + +price3);
+				}
+				if(x==4){
+				var price1 = document.getElementById("price1").value;
+				var price2 = document.getElementById("price2").value;
+				var price3 = document.getElementById("price3").value;
+				var price4 = document.getElementById("price4").value;
+				var text = $('.total');
+				text.val(+price1 + +price2 + +price3 + +price4);
+				}				
+				
+			});
+		
+		
+		});
+
+        $($wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+            e.preventDefault(); 
+			$(this).parent('div').remove();
+			x--;
+			if(x==0){
+			var text = $('.total');
+				text.val(0);
+			}
+        })
+		$($wrapper).append(' <div class="totals"><div class="totals-item"><button type="button" id="button" class="button">Total</button></div><div class="totals-value" id="cart-subtotal"><input type="text" id="total" class="total" /><br/><br/></div></div>');
+        
+		
+    });
+	});   
+//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+
+<div class="multi-field-wrapper">
+<button type="button" class="add-field">Add Product</button>
+<div class="multi-fields">
+		  <div class="multi-field">
+		  </div></div></div>
+</body>
+
+</html>
+

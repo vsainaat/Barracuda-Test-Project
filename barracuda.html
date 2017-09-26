@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="googlebot" content="noindex, nofollow">
+		<title>Barracuda Test Project | Purchasing</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+
+  
+		<script type='text/javascript'>//<![CDATA[
+
+		/* This section of code would be executed everytime the window is loaded */
+		$(window).load(function(){
+		
+		//This entire section is executed when the tab "Select products" is clicked on
+		$('.multi-field-wrapper').each(function () {
+				var $wrapper = $('.multi-fields', this);
+				// Variable x stores the count of products
+				var x = 0;
+				var price = []; // The price array stores the price of all products selected by the user
+				price[0] = 0;
+				//$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity1" class="quantity1"/></form></div><div class="product-price"><input type="text" id="price1" class="price1" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+					
+				//Label for product, quantity, price
+				$($wrapper).append('<div class="column-labels"><label class="product-details">Product</label><label class="product-quantity">Quantity</label><label class="product-price">Price</label></div>');
+				
+				//When the button "Add product is clicked"
+				$(".add-field", $(this)).click(function (e) {
+					x++; //increase the counter of products by 1
+					
+					/* Everytime user clicks to add a product, dropdowns of products, deployment options, models are displayed
+						along with the required quantity and respective price*/
+					if(x==1){
+					
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity1" class="quantity1" min="1"/></form></div><div class="product-price"><input type="text" id="price1" class="price1" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+					}
+					
+					if(x==2){
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity2" class="quantity2"/></form></div><div class="product-price"><input type="text" id="price2" class="price2" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+
+					}
+					if(x==3){
+					
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity3" class="quantity3"/></form></div><div class="product-price"><input type="text" id="price3" class="price3" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+
+					
+					}
+					if(x==4){
+					
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity4" class="quantity4"/></form></div><div class="product-price"><input type="text" id="price4" class="price4" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+
+					
+					}
+					
+					
+				/* Json data that contains the array of products available, deployment options for each product,
+					and product models available for each deployment option*/
+					
+				var myJson = {
+						"products": [
+							{
+								"product_name": "Barracuda Backup",
+								"product_id": "1",
+								"deployment_methods": 
+								[
+									{
+										"deployment_name": "Appliance",
+										"deployment_id": "1",
+										"product_models": [
+											{
+												"model_name": "B190",
+												"model_id": "1",
+												"model_price": 500
+											},
+											{
+												"model_name": "B290",
+												"model_id": "2",
+												"model_price": 1500
+											},
+											{
+												"model_name": "B390",
+												"model_id": "3",
+												"model_price": 2500						
+											}
+										]
+									},
+									{
+										"deployment_name": "Cloud Subscription",
+										"deployment_id": "3",
+										"product_models": [
+											{
+												"model_name": "Cloud-to-Cloud Backup",
+												"model_id": "4",
+												"model_price": 500
+											}
+										]
+									}
+								]
+							},
+							{
+								"product_name": "NextGen Firewall",
+								"product_id": "2",
+								"deployment_methods":
+								[
+									{
+										"deployment_name": "Appliance",
+										"deployment_id": "1.",
+										"product_models":
+										[
+											{
+												"model_name": "FW100",
+												"model_id": "5",
+												"model_price": 1000
+											},
+											{
+												"model_name": "FW200",
+												"model_id": "6",
+												"model_price": 1500
+											},
+											{
+												"model_name": "FW300",
+												"model_id": "7",
+												"model_price": 3500
+											},
+											{
+												"model_name": "FW400",
+												"model_id": "8",
+												"model_price": 5000
+											}
+										]
+									},
+									{
+										"deployment_name": "Virtual Appliance",
+										"deployment_id": "2",
+										"product_models":
+										[
+											{
+												"model_name": "FW100-V",
+												"model_id": "9",
+												"model_price": 500
+											},
+											{
+												"model_name": "FW200-V",
+												"model_id": "10",
+												"model_price": 7500
+											},
+											{
+												"model_name": "FW300-V",
+												"model_id": "11",
+												"model_price": 1750
+											},
+											{
+												"model_name": "FW400-V",
+												"model_id": "12",
+												"model_price": 2500
+											}
+										]
+									}
+									
+								]
+							},
+							
+							{
+								"product_name": "Email Security Gateway",
+								"product_id": "3",
+								"deployment_methods":
+								[
+									{
+										"deployment_name": ".Appliance",
+										"deployment_id": ".1",
+										"product_models":
+										[
+											{
+												"model_name": "EM100",
+												"model_id": "13",
+												"model_price": 1000
+											},
+											{
+												"model_name": "EM200",
+												"model_id": "14",
+												"model_price": 2000
+											}
+										]
+									},
+									{
+										"deployment_name": "Virtual Appliance.",
+										"deployment_id": "2.",
+										"product_models":
+										[
+											{
+												"model_name": "EM100-V",
+												"model_id": "15",
+												"model_price": 500
+											},
+											{
+												"model_name": "EM200-V",
+												"model_id": "16",
+												"model_price": 1500
+											}
+										]
+									}
+									
+								]
+							}
+						]
+					}
+
+		
+		// Iterating through the Json data, each product is appended as a dropdown value for the Select Product dropdown option
+		$.each(myJson.products, function (index, value) {
+			$('.product1').append('<option value="'+value.product_id+'">'+value.product_name+'</option>');
+		});
+		
+		//On change of product selection, respective deployment options for that product is displayed in the next dropdown
+		$('.product1').on('change', function(){
+			
+			for(var i = 0; i < myJson.products.length; i++)
+			{
+			  
+			  if(myJson.products[i].product_id == $(this).val())
+			  {
+				
+				 $.each(myJson.products[i].deployment_methods, function (index, value) {
+					$('.deployment1').append('<option value="'+value.deployment_id+'">'+value.deployment_name+'</option>');
+				});
+				}
+			}
+		});
+
+		/* getModels() function iterated through json array and retrieves deployment Ids and related model Ids and 
+			inset them in the models array. the models array consists of all models for a partcular deployment option */
+		function getModels() {
+			var models = [];
+			
+			for(var i = 0; i < myJson.products.length; i++) {
+			  var product = myJson.products[i];
+			  for(var j = 0; j < product.deployment_methods.length; j++) {
+				  var deployment_method = product.deployment_methods[j];
+				  for (var k = 0; k < deployment_method.product_models.length; k++) {
+					var product_model = deployment_method.product_models[k];
+					models.push({
+						deploymentId: deployment_method.deployment_id,
+						deploymentName: deployment_method.deployment_name,
+						modelId: product_model.model_id,
+						modelName: product_model.model_name,
+						modelPrice: product_model.model_price
+						
+					});
+					
+				  }
+			  }
+			}
+			return models;
+		}
+
+		/* On change of the deployment selection, models for the particular deployment is obtained from getModels() function
+			and are appended to the product model dropdown list */
+		
+		$('.deployment1').on('change', function(){
+		   
+		   var models = getModels();
+		   var deploymentId = $(this).val();
+		   
+			$.each(models, function (index, value) {
+			  if (value.deploymentId == deploymentId) {
+				  $('.model1').append('<option value="'+value.modelId +'">'+value.modelName+'</option>');
+			  }
+			  });
+		  });
+		  
+		  
+		  // On selection of product model, respective proce is displayed and also added to proice array to calculate total price later
+		  
+		  $('.model1').on('change', function(){
+				   var modelId = $(this).val();
+				  var models = getModels();
+		   
+				  $.each(models, function (index, value) {
+				  if(value.modelId == modelId){
+				  price[x] = value.modelPrice;
+				  
+					if(x==1){
+							var text = $('.price1');
+							text.val(price[x]);
+					}
+					
+					if(x==2){
+							var text = $('.price2');
+							text.val(price[x]);
+					}
+					
+					if(x==3){
+							var text = $('.price3');
+							text.val(price[x]);
+					}
+					
+					if(x==4){
+							var text = $('.price4');
+							text.val(price[x]);
+					}
+				  
+				   }   
+				  });
+				  });
+		 
+		 // On change of quantity, price is updated as Old price*quantity. And the new price is updated in the price array
+		 
+		  $('.quantity1').on('change', function(){
+		  
+					
+						var quantity = document.getElementById("quantity1").value;
+						var price = document.getElementById("price1").value;
+				  
+						var text = $('.price1');
+						text.val(quantity*price);
+						price[x] = quantity*price;
+						
+					});
+					$('.quantity2').on('change', function(){
+		  
+					
+						var quantity = document.getElementById("quantity2").value;
+						var price = document.getElementById("price2").value;
+				  
+						var text = $('.price2');
+						text.val(quantity*price);
+						price[x] = quantity*price;
+				  
+					});
+					$('.quantity3').on('change', function(){
+		  
+					
+						var quantity = document.getElementById("quantity3").value;
+						var price = document.getElementById("price3").value;
+				  
+						var text = $('.price3');
+						text.val(quantity*price);
+						price[x] = quantity*price;
+						
+					});
+					$('.quantity4').on('change', function(){
+		  
+					
+						var quantity = document.getElementById("quantity4").value;
+						var price = document.getElementById("price4").value;
+				  
+						var text = $('.price4');
+						text.val(quantity*price);
+						price[x] = quantity*price;
+						
+					});
+				
+					//When the button "Total" is clicked, it sums all values in price array and displays the total price of all selected products	
+					$('.button').on('click', function(){
+						if(x==1){
+						var price1 = document.getElementById("price1").value;
+						var text = $('.total');
+						text.val(+price1);
+						}
+						if(x==2){
+						var price1 = document.getElementById("price1").value;
+						var price2 = document.getElementById("price2").value;
+						var text = $('.total');
+						text.val(+price1 + +price2);
+						}
+						if(x==3){
+						var price1 = document.getElementById("price1").value;
+						var price2 = document.getElementById("price2").value;
+						var price3 = document.getElementById("price3").value;
+						var text = $('.total');
+						text.val(+price1 + +price2 + +price3);
+						}
+						if(x==4){
+						var price1 = document.getElementById("price1").value;
+						var price2 = document.getElementById("price2").value;
+						var price3 = document.getElementById("price3").value;
+						var price4 = document.getElementById("price4").value;
+						var text = $('.total');
+						text.val(+price1 + +price2 + +price3 + +price4);
+						}				
+						
+					});
+				
+				});
+				
+				
+				/* When the "Remove" option is clicked, it removes its entire parent - meaning the related product, deployment option,
+				model, quantity, price are all removed */
+
+				$($wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+					e.preventDefault(); 
+					$(this).parent('div').remove();
+					x--;
+					if(x==0){
+					var text = $('.total');
+						text.val(0);
+					}
+				})
+				$($wrapper).append(' <div class="totals"><div class="totals-item"><button type="button" id="button" class="button">Total Price</button></div><div class="totals-value" id="cart-subtotal"><input type="text" id="total" class="total" /><br/><br/></div></div>');
+				
+				
+			});
+			});   
+		//]]> 
+
+		</script>
+
+  
+</head>
+
+<body>
+
+		<script>
+		function openCity(evt, cityName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+		</script>
+
+		<!-- Header -->
+		<header class="header-fixed">
+
+			<div class="header-limiter">
+				
+				<!-- Image of the company logo -->
+				<h1><a href="#"><img src="images/logo.png" alt="" height=50px width=200px;/></a></h1>
+				
+				<!-- Navigation links to various pages of the website -->
+				<nav>
+					<a href="#">Home</a>
+					<a href="#">About</a>
+					<a href="barracuda.html" class="selected">Purchasing</a>
+					<a href="#">Faq</a>
+					<a href="form.html">Contact</a>
+				</nav>
+
+			</div>
+
+		</header>
+
+		<!-- You need this element to prevent the content of the page from jumping up -->
+		<div class="header-fixed-placeholder"></div>
+
+
+		<br/><br/><br/>
+		
+		<h1 style="color:blue;"> Purchase Online </h1>
+		<p> You are one step away from solving your IT problems with the industry's easiest and most comprehensive security solutions.
+		    Just select the desired products, deployment options and models. Virtual and cloud products are available immediately, and appliances will 
+			be shipped within two(2) business days. All products come with Barracuda's no-questions-asked 30-day money back guarantee <br/></p><br/><br/><br/>
+		<!-- Creating button tabs for Product Purchase and Contact and Billing -->
+		<div class="tab">
+			  <button class="tablinks" onclick="openCity(event, 'Products')">Select Products</button> <!-- Clicking on this button would invoke the openCity js function -->
+			  <a href="checkout.php"><button class="tablinks">Contact and Billing</button></a> <!-- This button navigates to the checkout page when clicked -->
+		</div>
+
+		<!-- This section of code is executed when the tab "Select products" is clicked.
+		This section includes the selection of products with their respective quantities -->
+		<div id="Products" class="tabcontent">
+	
+			<br/><br/><br/>
+			<div class="multi-field-wrapper">
+			<button type="button" class="add-field">Add Product</button> <!-- Clicking this button would invoke the javascript function to add product dropdowns, quantity, price etc-->
+			<div class="multi-fields">
+			<div class="multi-field">
+			</div></div></div>
+
+			<a href="checkout.php"><button>Go To Checkout</a><button> <!-- Navigating to the checkout page -->
+
+
+		</div>
+
+
+	<!-- Footer -->
+
+		<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3><img src="images/logo.png" alt="" height=50px width=200px;/></h3>
+				
+				<!-- Navigation links to various pages of the website -->
+				
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="barracuda.html">Purchasing</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="form.html">Contact</a>
+				</p>
+				
+				<p class="footer-company-name">Barracuda Networks &copy; 2017</p>
+			</div>
+			
+			<!-- Contact details of the comany -->
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>3175 Winchester Blvd</span> Campbell, CA 95008</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+1 408 342-5400</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">support@barracuda.com</a></p>
+				</div>
+
+			</div>
+			
+			<!-- Details about the company -->
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Barracuda Networks, Inc. offers industry-leading solutions designed to solve mainstream IT problems – efficiently and cost effectively – while maintaining a level of customer support and satisfaction second to none.
+					</p>
+
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+		</footer>
+	  
+</body>
+
+</html>
+
