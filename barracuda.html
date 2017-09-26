@@ -15,8 +15,9 @@
 		<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+		
 
-  
+		<!--Javascript code populate Select products section -->
 		<script type='text/javascript'>//<![CDATA[
 
 		/* This section of code would be executed everytime the window is loaded */
@@ -25,39 +26,44 @@
 		//This entire section is executed when the tab "Select products" is clicked on
 		$('.multi-field-wrapper').each(function () {
 				var $wrapper = $('.multi-fields', this);
-				// Variable x stores the count of products
+				// Variable x stores the q[i]count of products
 				var x = 0;
 				var price = []; // The price array stores the price of all products selected by the user
 				price[0] = 0;
-				//$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity1" class="quantity1"/></form></div><div class="product-price"><input type="text" id="price1" class="price1" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
-					
+				
 				//Label for product, quantity, price
 				$($wrapper).append('<div class="column-labels"><label class="product-details">Product</label><label class="product-quantity">Quantity</label><label class="product-price">Price</label></div>');
 				
 				//When the button "Add product is clicked"
 				$(".add-field", $(this)).click(function (e) {
 					x++; //increase the counter of products by 1
-					
+										
 					/* Everytime user clicks to add a product, dropdowns of products, deployment options, models are displayed
 						along with the required quantity and respective price*/
 					if(x==1){
-					
-							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity1" class="quantity1" min="1"/></form></div><div class="product-price"><input type="text" id="price1" class="price1" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+							
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><input type="number" value="1" id="quantity1" class="quantity1" min="1"/></form></div><div class="product-price"><input type="text" id="price1" class="price1" name="price" value=0.00 /></div></div></div>');
 					}
 					
 					if(x==2){
-							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity2" class="quantity2"/></form></div><div class="product-price"><input type="text" id="price2" class="price2" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><input type="number" value="1" id="quantity2" class="quantity2" min="1"/></form></div><div class="product-price"><input type="text" id="price2" class="price2" name="price" value=0.00 /></div><a href="#" class="remove_field">Remove</a></div></div>');
 
 					}
 					if(x==3){
 					
-							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity3" class="quantity3"/></form></div><div class="product-price"><input type="text" id="price3" class="price3" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><input type="number" value="1" id="quantity3" class="quantity3" min="1"/></form></div><div class="product-price"><input type="text" id="price3" class="price3" name="price" value=0.00 /></div><a href="#" class="remove_field">Remove</a></div></div>');
 
 					
 					}
 					if(x==4){
 					
-							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><label>Quantity: </label><input type="number" value="1" id="quantity4" class="quantity4"/></form></div><div class="product-price"><input type="text" id="price4" class="price4" name="price" value="Price" /></div><a href="#" class="remove_field">Remove</a></div></div>');
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><input type="number" value="1" id="quantity4" class="quantity4" min="1"/></form></div><div class="product-price"><input type="text" id="price4" class="price4" name="price" value= 0.00 /></div><a href="#" class="remove_field">Remove</a></div></div>');
+
+					
+					}
+					if(x==5){
+					
+							$($wrapper).append('<div class="multi-field-wrapper"><div class="product"><div class="product-details"><div class="multi-fields"><div class="multi-field"><form id="dropdowns"><label>Select your product: </label><br/><br/><label>Product:</label><br/><select id="product1" class="product1" name="product"><option value="000">-(Select)-</option></select><br /><label>Deployment Option:</label><br/><select id="deployment1" class="deployment1" name="network"><option value="000">-(Select)-</option></select><br /><label>Product Model:</label><br/><select id="model1" class="model1" name="model"><option value="000">-(Select)-</option></select><br/></form></div></div></div><div class="product-quantity"><form><input type="number" value="1" id="quantity5" class="quantity5" min="1"/></form></div><div class="product-price"><input type="text" id="price5" class="price5" name="price" value= 0.00 /></div><a href="#" class="remove_field">Remove</a></div></div>');
 
 					
 					}
@@ -308,6 +314,10 @@
 							var text = $('.price4');
 							text.val(price[x]);
 					}
+					if(x==5){
+							var text = $('.price5');
+							text.val(price[x]);
+					}
 				  
 				   }   
 				  });
@@ -359,9 +369,21 @@
 						price[x] = quantity*price;
 						
 					});
+					$('.quantity5').on('change', function(){
+		  
+					
+						var quantity = document.getElementById("quantity5").value;
+						var price = document.getElementById("price5").value;
+				  
+						var text = $('.price5');
+						text.val(quantity*price);
+						price[x] = quantity*price;
+						
+					});
 				
 					//When the button "Total" is clicked, it sums all values in price array and displays the total price of all selected products	
 					$('.button').on('click', function(){
+					
 						if(x==1){
 						var price1 = document.getElementById("price1").value;
 						var text = $('.total');
@@ -387,7 +409,18 @@
 						var price4 = document.getElementById("price4").value;
 						var text = $('.total');
 						text.val(+price1 + +price2 + +price3 + +price4);
-						}				
+						}
+						if(x==5){
+						var price1 = document.getElementById("price1").value;
+						var price2 = document.getElementById("price2").value;
+						var price3 = document.getElementById("price3").value;
+						var price4 = document.getElementById("price4").value;
+						var price5 = document.getElementById("price5").value;
+						var text = $('.total');
+						text.val(+price1 + +price2 + +price3 + +price4 + +price5);
+						}
+						
+						
 						
 					});
 				
@@ -406,12 +439,12 @@
 						text.val(0);
 					}
 				})
-				$($wrapper).append(' <div class="totals"><div class="totals-item"><button type="button" id="button" class="button">Total Price</button></div><div class="totals-value" id="cart-subtotal"><input type="text" id="total" class="total" /><br/><br/></div></div>');
+				//$($wrapper).append(' <div class="totals"><div class="totals-item"><button type="button" id="button" class="button">Total Price</button></div><div class="totals-value" id="cart-subtotal"><input type="text" id="total" class="total" value="0.00" /><br/><br/></div></div>');
 				
 				
 			});
 			});   
-		//]]> 
+		//]]>
 
 		</script>
 
@@ -482,11 +515,18 @@
 			<button type="button" class="add-field">Add Product</button> <!-- Clicking this button would invoke the javascript function to add product dropdowns, quantity, price etc-->
 			<div class="multi-fields">
 			<div class="multi-field">
+			
+			
+			
 			</div></div></div>
-
-			<a href="checkout.php"><button>Go To Checkout</a><button> <!-- Navigating to the checkout page -->
-
-
+			
+		<div class="totals"><div class="totals-item"><button type="button" id="button" class="button" style="float: right;">Order Total</button></div><br/><br/><br/><div class="totals-value" id="cart-subtotal" style="float: right;"><input type="text" id="total" class="total" value="0.00" style="float: right;" /><br/><br/></div></div> 
+			
+			
+			<br/>
+			<br/>
+		
+		<br/><button style="float:right; font-size: 22px;"><a href="checkout.php">Next Step: Contact & Billing -></a></button>  <!-- Navigating to the checkout page -->
 		</div>
 
 

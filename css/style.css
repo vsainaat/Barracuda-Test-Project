@@ -56,8 +56,13 @@ body{
 
 /* Apply clearfix in a few places */
 /* Apply dollar signs */
-.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+.product .product-price:before, .product .product-line-price:before {
   content: '$';
+}
+
+.totals-value:before{
+	content: '$';
+	float: right;
 }
 
 /* Body/Header */
